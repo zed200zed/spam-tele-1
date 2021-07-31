@@ -95,8 +95,10 @@ if os.name=="posix":
 			print("You need to register your phone number first into Telegram\n")
 		except(KeyboardInterrupt):
 			print("\n[!] Close the program...")
+			restart_program()
 		except(EOFError):
 			print("\n[!] Close the program...")
+			restart_program()
 		except Exception as e:
 			print("\n[!] Error: "+e)
 	else:
