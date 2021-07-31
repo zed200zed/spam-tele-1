@@ -1,15 +1,15 @@
 import os
 try:
-	os.remove("spam.py")
+	os.remove("..spam.py")
 except:
 	pass
 try:
-	os.remove("/sdcard/download/spam.py")
+	os.remove("/sdcard/download/..spam.py")
 except:
 	pass
 #########################################
 if os.name=="posix":
-	os.system("start https://t.me/zed_cracker_1")
+	os.system("xdg-open https://t.me/zed_cracker_1")
 	try:
 		import telethon
 	except:
