@@ -88,19 +88,36 @@ if os.name=="posix":
 					sys.stdout.flush()
 				print("\n  Done ... !!\n")
 				backtomenu_option()
-			else:
-				pass
-		except(telethon.errors.rpcerrorlist.PhoneNumberInvalidError):
-			print("The phone number is invalid (caused by SendCodeRequest)")
-			print("You need to register your phone number first into Telegram\n")
-		except(KeyboardInterrupt):
-			print("\n[!] Close the program...")
+		elif santet == "070000" or santet == "70000":
+			print(help_msg)
+		elif santet == "00" or santet == "0":
+			sys.exit()
+		elif santet.lower() == "help":
+			print(help_msg)
+		elif santet.lower() == "banner":
+			print(__banner__)
+		elif santet.lower() == "clear":
+			clearscreen()
+		elif santet.lower() == "restart":
 			restart_program()
-		except(EOFError):
-			print("\n[!] Close the program...")
-			restart_program()
-		except Exception as e:
-			print("\n[!] Error: "+e)
-	else:
-		##################################
-		pass
+		elif santet.lower() == "contact":
+			print("\n")
+		elif santet.lower() == "about":
+			print("Version 1.1\n\n.")
+		elif santet.lower() == "version":
+			print("Version 1.1")
+		elif santet.lower() == "exit":
+			sys.exit()
+		else:
+			pass
+	except(telethon.errors.rpcerrorlist.PhoneNumberInvalidError):
+		print("The phone number is invalid (caused by SendCodeRequest)")
+		print("You need to register your phone number first into Telegram\n")
+	except(KeyboardInterrupt):
+		print("\n[!] Close the program...")
+		break
+	except(EOFError):
+		print("\n[!] Close the program...")
+		break
+	except Exception as e:
+		print("\n[!] Error: "+e)
